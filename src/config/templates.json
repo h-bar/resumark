@@ -1,0 +1,12 @@
+{
+  "DevResume": {
+    "name": "DevResume",
+    "sections": {
+      "head": "head.html",
+      "header": "header.html",
+      "item": "item.html",
+      "section": "section.html",
+      "summary": "summary.html"
+    }
+  }
+}
