@@ -1,6 +1,6 @@
 /*jshint esversion: 6 */
-import Handlebars from 'handlebars';
-import marked from "marked";
+import Handlebars from 'handlebars/dist/cjs/handlebars'
+import { marked } from "marked";
 
 
 Handlebars.registerHelper("markdown", function(text) {
