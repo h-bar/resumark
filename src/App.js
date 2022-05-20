@@ -6,8 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import templatesConfig from './config/templates.json';
 import { initTemplate, compile } from './resumark';
 
-import AceEditor from "react-ace";
-import "ace-builds/src-noconflict/theme-github";
+import { ResumarkEditor } from './components/editor'
 
 class App extends React.Component {
   state = {
@@ -40,23 +39,7 @@ class App extends React.Component {
     return (
       <div className="container-fluid">
         <div className="d-flex" style={{height: "100vh"}}>
-          <div className="flex-fill">
-            <AceEditor
-              theme="github"
-              className="h-100 w-100"
-              onChange={this.setContent}
-              value={this.state.content}
-              editorProps={{ $blockScrolling: true }}
-              fontSize={16}
-              showPrintMargin={false}
-              highlightActiveLine={true}
-              wrapEnabled={true}
-              setOptions={{
-                showLineNumbers: true,
-                tabSize: 2,
-              }}
-            ></AceEditor>
-          </div>
+          <ResumarkEditor onChange={this.setContent} content={this.state.content}></ResumarkEditor>
           <iframe className="h-100" style={{width: '8.5in'}} frameBorder={0} srcDoc={compile(this.state.content, this.state.template)} title="preview"></iframe>
         </div>
       </div>  
